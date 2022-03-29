@@ -10,6 +10,6 @@ router.use('/user', userRouter);
 router.use('/type', typeRouter);
 router.use('/gener', generRouter);
 router.use('/author', authorRouter);
-router.use('/book', bookRouter);
+router.use('/books', bookRouter);
 
 module.exports = router;

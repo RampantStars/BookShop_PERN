@@ -4,6 +4,6 @@ const generController = require('../controllers/generController');
 
 router.post('/', generController.create);
 router.get('/', generController.getAll);
-router.delete('/', generController.delete);
+router.delete('/:id', generController.delete);
 
 module.exports = router;
