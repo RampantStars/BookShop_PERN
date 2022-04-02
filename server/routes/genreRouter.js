@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const router = new Router();
-const generController = require('../controllers/generController');
+const generController = require('../controllers/genreController');
 
 router.post('/', generController.create);
 router.get('/', generController.getAll);
