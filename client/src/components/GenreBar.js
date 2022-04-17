@@ -9,8 +9,8 @@ const GenreBar = observer(() => {
     <Row className="d-flex">
       {book.genres.map((genre) => (
         <Card
-          className="p-3 m-1 w-auto"
-          style={{ cursor: 'pointer' }}
+          className="p-1 m-1 w-auto"
+          style={{ cursor: 'pointer', fontSize: 16 }}
           border={genre.id === book.selectedGenre.id ? 'danger' : 'light'}
           onClick={() => book.setSelectedGenre(genre)}
           key={genre.id}

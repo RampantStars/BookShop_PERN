@@ -9,7 +9,8 @@ const TypeBar = observer(() => {
     <ListGroup>
       {book.types.map((type) => (
         <ListGroup.Item
-          style={{ cursor: 'pointer' }}
+          className="p-1"
+          style={{ cursor: 'pointer', fontSize: 16 }}
           active={type.id === book.selectedType.id}
           onClick={() => book.setSelectedType(type)}
           key={type.id}

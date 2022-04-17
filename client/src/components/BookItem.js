@@ -10,7 +10,7 @@ const BookItem = ({ book }) => {
   return (
     <Col md={3} onClick={() => history(BOOK_ROUTE + '/' + book.id)}>
       <Card className="mt-4" style={{ width: 200, cursor: 'pointer' }} border={'light'}>
-        <Image width={150} height={150} src={book.img} />
+        <Image width={150} height={150} src={process.env.REACT_APP_API_URL + book.img} />
         <div className="d-flex mt-1 justify-content-between align-items-center">
           <div className="text-black-50">sadasdsad</div>
           <div className="d-flex align-items-center">

@@ -1,24 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Image, Card, Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 import bigStar from '../assets/star.svg';
+import { fetchOneBooks } from '../http/bookAPI';
+import REACT_APP_API_URL from '..';
 
 const BookPage = () => {
-  const book = {
-    id: 1,
-    name: 'Приключения Тома Соера',
-    description:
-      'asdkjhaskfjgahlfdgajsk  fhdkjfhgdskjfhgdsfsdfgjhdfgdksjhgfdsjhfgsfh geutyrweygrkjhdfgkhsdgfkjhdsgfk hfgdsjhfgsdhfgnvccbnxvcnxbvnbvhk fgsfgsefgsjkehgfeks ugfeiysfgsjebfkjsehgfuyesiifyesg',
-    pages: 200,
-    price: 150,
-    rating: 5,
-    img: 'https://i.pinimg.com/564x/32/ae/35/32ae357bb1b3cee6d95dd171ab81baaf.jpg',
-  };
-
+  const [book, setBook] = useState({});
+  const { id } = useParams();
+  useEffect(() => {
+    fetchOneBooks(id).then((data) => setBook(data));
+  }, []);
   return (
     <Container className="mt-3">
       <Row>
         <Col md={4}>
-          <Image width={300} height={300} src={book.img} />
+          <Image width={300} height={300} src={process.env.REACT_APP_API_URL + book.img} />
         </Col>
         <Col md={4}>
           <Row className="d-flex flex-column align-items-center">

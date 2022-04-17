@@ -2,45 +2,15 @@ import { makeAutoObservable } from 'mobx';
 
 export default class BookStore {
   constructor() {
-    this._types = [
-      { id: 1, name: 'Книга' },
-      { id: 2, name: 'Манга' },
-      { id: 3, name: 'Манхва' },
-      { id: 4, name: 'Энциклопедия' },
+    this._types = [];
+    this._genres = [];
+
+    this._author = [
+      { id: 1, name: 'Л.Н.Толсой' },
+      { id: 2, name: 'А.П.Чехов' },
+      { id: 3, name: 'А.П.Чехов' },
     ];
-    this._genres = [
-      { id: 1, name: 'Приключения' },
-      { id: 2, name: 'Фентези' },
-    ];
-    this._books = [
-      {
-        id: 1,
-        name: 'Приключения Тома Соера',
-        description: 'test1',
-        pages: 200,
-        price: 150,
-        rating: 5,
-        img: 'https://i.pinimg.com/564x/32/ae/35/32ae357bb1b3cee6d95dd171ab81baaf.jpg',
-      },
-      {
-        id: 2,
-        name: 'Соера',
-        description: 'test1',
-        pages: 210,
-        price: 60,
-        rating: 5,
-        img: 'https://i.pinimg.com/564x/32/ae/35/32ae357bb1b3cee6d95dd171ab81baaf.jpg',
-      },
-      {
-        id: 3,
-        name: 'Приключения  Соера',
-        description: 'test1',
-        pages: 20,
-        price: 160,
-        rating: 5,
-        img: 'https://i.pinimg.com/564x/32/ae/35/32ae357bb1b3cee6d95dd171ab81baaf.jpg',
-      },
-    ];
+    this._books = [];
 
     this._selectedType = {};
     this._selectedGenre = {};
@@ -58,6 +28,9 @@ export default class BookStore {
   }
   setGenres(genres) {
     this._genres = genres;
+  }
+  setAuthors(authors) {
+    this._author = authors;
   }
   setBooks(books) {
     this._books = books;
@@ -77,5 +50,8 @@ export default class BookStore {
   }
   get books() {
     return this._books;
+  }
+  get authors() {
+    return this._author;
   }
 }
