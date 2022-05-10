@@ -14,6 +14,7 @@ export default class BookStore {
 
     this._selectedType = {};
     this._selectedGenre = {};
+    this._selectedAuthor = {};
     makeAutoObservable(this);
   }
 
@@ -22,6 +23,9 @@ export default class BookStore {
   }
   setSelectedGenre(genre) {
     this._selectedGenre = genre;
+  }
+  setSelectedAuthor(author) {
+    this._selectedAuthor = author;
   }
   setTypes(types) {
     this._types = types;
@@ -41,6 +45,9 @@ export default class BookStore {
   }
   get selectedGenre() {
     return this._selectedGenre;
+  }
+  get selectedAuthor() {
+    return this._selectedAuthor;
   }
   get types() {
     return this._types;

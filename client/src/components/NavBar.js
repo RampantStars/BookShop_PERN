@@ -18,23 +18,23 @@ const NavBar = observer(() => {
   };
 
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg='dark' variant='dark'>
       <Container>
         <NavLink style={{ color: 'white', textDecoration: 'none' }} to={SHOP_ROUTE}>
           BookShop
         </NavLink>
         {user.isAuth ? (
-          <Nav className="ms-auto" style={{ color: 'white' }}>
-            <Button variant="outline-light" onClick={() => history(ADMIN_ROUTE)}>
+          <Nav className='ms-auto' style={{ color: 'white' }}>
+            <Button variant='outline-light' onClick={() => history(ADMIN_ROUTE)}>
               Админ панель
             </Button>
-            <Button variant="outline-light" className="ms-2" onClick={() => logOut()}>
+            <Button variant='outline-light' className='ms-2' onClick={() => logOut()}>
               Выйти
             </Button>
           </Nav>
         ) : (
-          <Nav className="ml-auto" style={{ color: 'white' }}>
-            <Button variant="outline-light" onClick={() => history(LOGIN_ROUTE)}>
+          <Nav className='ml-auto' style={{ color: 'white' }}>
+            <Button variant='outline-light' onClick={() => history(LOGIN_ROUTE)}>
               Авторизация
             </Button>
           </Nav>

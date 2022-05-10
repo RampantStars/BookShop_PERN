@@ -3,7 +3,6 @@ import { Container, Row, Col, Image, Card, Button } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import bigStar from '../assets/star.svg';
 import { fetchOneBooks } from '../http/bookAPI';
-import REACT_APP_API_URL from '..';
 
 const BookPage = () => {
   const [book, setBook] = useState({});
@@ -12,13 +11,13 @@ const BookPage = () => {
     fetchOneBooks(id).then((data) => setBook(data));
   }, []);
   return (
-    <Container className="mt-3">
+    <Container className='mt-3'>
       <Row>
         <Col md={4}>
-          <Image width={300} height={300} src={process.env.REACT_APP_API_URL + book.img} />
+          <Image width={300} height={300} src={process.env.REACT_APP_API_URL + '/' + book.img} />
         </Col>
         <Col md={4}>
-          <Row className="d-flex flex-column align-items-center">
+          <Row className='d-flex flex-column align-items-center'>
             <h2>{book.name}</h2>
             <div
               style={{
@@ -28,7 +27,7 @@ const BookPage = () => {
                 backgroundSize: 'cover',
                 fontSize: 64,
               }}
-              className="d-flex align-items-center justify-content-center"
+              className='d-flex align-items-center justify-content-center'
             >
               {book.rating}
             </div>
@@ -36,7 +35,7 @@ const BookPage = () => {
         </Col>
         <Col md={4}>
           <Card
-            className="d-flex flex-column align-items-center justify-content-around"
+            className='d-flex flex-column align-items-center justify-content-around'
             style={{
               width: 300,
               height: 300,
@@ -51,9 +50,9 @@ const BookPage = () => {
           </Card>
         </Col>
       </Row>
-      <Row className="d-flex flex-column mt-5">
-        <h3 className=" p-0">Описание</h3>
-        <Row className="d-inline mt-2 fs-4">{book.description}</Row>
+      <Row className='d-flex flex-column mt-5'>
+        <h3 className=' p-0'>Описание</h3>
+        <Row className='d-inline mt-2 fs-4'>{book.description}</Row>
       </Row>
     </Container>
   );
